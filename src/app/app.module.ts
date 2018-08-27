@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +12,13 @@ import zh from '@angular/common/locales/zh';
 
 registerLocaleData(zh);
 
+const routes: Routes = [
+  {path: '', redirectTo: 'article', pathMatch: 'full'},
+  {path: 'article', loadChildren: './components/article/article.module#ArticleModule'},
+  {path: 'coder', loadChildren: './components/coder/coder.module#CoderModule'},
+  {path: 'multimedia', loadChildren: './components/multimedia/multimedia.module#MultimediaModule'},
+  {path: '**', redirectTo: 'article'},
+];
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +28,8 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
