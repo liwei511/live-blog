@@ -5,6 +5,7 @@ import { CoderComponent } from './coder.component';
 import { CodeComponent } from './code/code.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { PublicModule } from '../../public/public.module';
 const routes: Routes = [
     { path: '', component: CoderComponent, children: [
             {path: 'code/:id', component: CodeComponent}
@@ -17,12 +18,13 @@ const routes: Routes = [
         CommonModule,
         ReactiveFormsModule,
         NgZorroAntdModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        PublicModule
     ],
     declarations: [
         CoderComponent,
         CodeComponent
     ]
 })
-export class CodesModule {
+export class CoderModule {
 }

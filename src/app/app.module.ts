@@ -10,6 +10,9 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 
+import { Service } from './service/app.service';
+import { ToolService } from './service/tool.service';
+
 registerLocaleData(zh);
 
 const routes: Routes = [
@@ -31,7 +34,7 @@ const routes: Routes = [
     NgZorroAntdModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, Service, ToolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+.state-selector {
+    cursor: pointer;
+    display:inline-block;
+    width: 125px;
+    text-align: center;
+    margin: 0 2px;
+    color: #666;
+    line-height: 20px;
+    height: 32px;
+    padding: 6px 12px;
+    border-radius: 0px;
+    border: 1px solid #D9DEE4;
+    background-color: #D9DEE4;
+}
+.state-selected {
+    border: 1px solid #001529;
+    background-color: #001529;
+    color: #FFFFFF;
+}

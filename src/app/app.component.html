@@ -2,9 +2,9 @@
   <nz-header>
     <div class="logo">LiveBlog</div>
     <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-      <li nz-menu-item>文章</li>
-      <li nz-menu-item>相册</li>
-      <li nz-menu-item>代码</li>
+      <li nz-menu-item [routerLink]="['/article']">文章</li>
+      <li nz-menu-item [routerLink]="['/coder']">代码</li>
+      <li nz-menu-item [routerLink]="['/multimedia']">万象</li>
     </ul>
   </nz-header>
   <nz-content style="padding:0 50px;">

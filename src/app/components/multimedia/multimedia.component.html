@@ -1,0 +1,4 @@
+<div *ngFor="let tab of tabs;let i=index;" class="state-selector"  [class.state-selected]="i===tabIndex" (click)="onTabChange(i)">
+    {{tab.label}}
+</div>
+<router-outlet></router-outlet>
